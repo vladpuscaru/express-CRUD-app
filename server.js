@@ -16,10 +16,11 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.get('/', (req, res) => {
-  res.status(200).render('actions');
+  res.status(200).render('actions', {data: app.locals.data});
 });
 
 app.get('/read', (req, res) => {
+  console.log(app.locals.data);
   res.status(201).render('read', {data: app.locals.data});
 });
 
@@ -39,8 +40,13 @@ app.post('/new', (req, res) => {
   // add new person to locals
   app.locals.data.persons.push(newPerson);
 
+  // construct the new JSON
+  const json = {
+    persons: app.locals.data.persons
+  }
+
   // write new person to file (database) async
-  dataFunctions.writeAsync(FILE_PATH, app.locals.data.persons);
+  dataFunctions.writeAsync(FILE_PATH, json);
 
   // redirect user to the READ page
   res.status(301).redirect('/read');

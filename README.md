@@ -1,9 +1,13 @@
 ## CRUD App
 Simple app for learning purposes which manages a json with objects and implements CRUD actions
+## Technologies used:
+- **express.js** for managing routes and HTTP requests
+- **ejs - embedded javascript** for dynamically creating HTML pages
 ## TODO features:
 - add sorting on the read part (backend with query params)
 - feature to add friends based on a list constructed from persons already defined
 - AJAX calls for forms
+- Move all css to separate 'main.css' file
 - ...
 ## If you want to try it yourself:
 ### - clone this repo

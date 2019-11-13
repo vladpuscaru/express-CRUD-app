@@ -32,8 +32,19 @@
     <!-- form for Deleting -->
     <form action="/delete" method="DELETE">
       <h5>Delete a person <strong>(DELETE)</strong></h5>
+      <%= data.persons %>
 
-      <input type="text">
+      <div class="input">
+        <label for="nameDelete">Choose person</label>
+        <input type="text" name="name" id="nameDelete">
+        <datalist>
+          <% data.persons.forEach(person => { %>
+            <option value="<%= person.name %>">
+              <%= person.name %>
+            </option>
+          <% }); %>
+        </datalist>
+      </div>
 
       <button class="btn btn-primary">Delete</button>
     </form>
@@ -41,7 +52,9 @@
     <form action="/update" method="UPDATE">
       <h5>UPDATE a person <strong>(UPDATE)</strong></h5>
 
-      <input type="text">
+      <div class="input">
+        <input type="text">
+      </div>
 
       <button class="btn btn-primary">Update</button>
     </form>
