@@ -1,0 +1,50 @@
+<%- include('./partials/header.ejs', { 
+  title: 'CRUD App',
+  subtitle: 'CRUD stands for Create, Read, Update, Delete',
+  firstMenuItem: true,
+  secondMenuItem: false
+ }); %>
+  
+  <div class="container container--flex container--flex--space">
+    <!-- form for Creating -->
+    <form action="/new" method="POST">
+      <h5>Add a new person <strong>(CREATE)</strong></h5>
+
+      <div class="input">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+      </div>
+      <div class="input">
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" required>
+      </div>
+      <div class="input">
+        <label for="occupation">Occupation</label>
+        <input type="text" name="occupation" id="occupation" required>
+      </div>
+      <div class="input">
+        <label for="friends">Friends</label>
+        <input type="text" name="friends" id="friends" required>
+      </div>
+
+      <button class="btn btn-primary">Create</button>
+    </form>
+    <!-- form for Deleting -->
+    <form action="/delete" method="DELETE">
+      <h5>Delete a person <strong>(DELETE)</strong></h5>
+
+      <input type="text">
+
+      <button class="btn btn-primary">Delete</button>
+    </form>
+    <!-- form for Updating -->
+    <form action="/update" method="UPDATE">
+      <h5>UPDATE a person <strong>(UPDATE)</strong></h5>
+
+      <input type="text">
+
+      <button class="btn btn-primary">Update</button>
+    </form>
+  </div>
+
+<%- include('./partials/footer.ejs'); %>

@@ -1,0 +1,28 @@
+<%- include('./partials/header.ejs', {
+  title: 'CRUD App',
+  subtitle: 'Here you can see all the objects',
+  firstMenuItem: false,
+  secondMenuItem: true
+}); %>
+
+<div class="container container--flex">
+  <% data.persons.forEach(person => { %>
+    
+    <div class="person">
+      <h3><%= person.name %></h3>
+      <p><strong>Age: </strong><%= person.age %></p>
+      <p><strong>Occupation: </strong><%= person.occupation %></p>
+      <p>
+        <strong>Friends: </strong>
+        <ul>
+          <% person.friends.forEach(friend => { %>
+            <li><%= friend %></li>
+          <% }); %>
+        </ul>
+      </p>
+    </div>
+
+  <% }); %>
+</div>
+
+<%- include('./partials/footer.ejs') %>
