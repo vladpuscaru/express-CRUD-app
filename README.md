@@ -4,6 +4,7 @@ Simple app for learning purposes which manages a json with objects and implement
 - **express.js** for managing routes and HTTP requests
 - **ejs - embedded javascript** for dynamically creating HTML pages
 ## TODO features:
+- implement UPDATE feature
 - add sorting on the read part (backend with query params)
 - feature to add friends based on a list constructed from persons already defined
 - AJAX calls for forms
