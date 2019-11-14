@@ -12,13 +12,17 @@ const write = (filePath, data) => {
   fs.writeFileSync(TEXTdata);
 }
 
-const writeAsync = async (filePath, data) => {
+const writeAsync = async (filePath, data, create) => {
   let TEXTdata = JSON.stringify(data);
   fs.writeFile(filePath, TEXTdata, (err) => {
     if (err) {
       console.log('Error at writing data to file! ', err);
     } else {
-      console.log(`New person added succesfully to ${filePath}`);
+      if (create) {
+        console.log(`New person added succesfully to ${filePath}`);
+      } else {
+        console.log(`Person succesfully removed from ${filePath}`);
+      }
     }
   });
 }

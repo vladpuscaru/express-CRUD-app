@@ -30,14 +30,13 @@
       <button class="btn btn-primary">Create</button>
     </form>
     <!-- form for Deleting -->
-    <form action="/delete" method="DELETE">
+    <form action="/delete" method="POST">
       <h5>Delete a person <strong>(DELETE)</strong></h5>
-      <%= data.persons %>
 
       <div class="input">
         <label for="nameDelete">Choose person</label>
-        <input type="text" name="name" id="nameDelete">
-        <datalist>
+        <input type="text" name="nameDelete" id="nameDelete" list="personsDelete">
+        <datalist id="personsDelete">
           <% data.persons.forEach(person => { %>
             <option value="<%= person.name %>">
               <%= person.name %>
@@ -49,7 +48,7 @@
       <button class="btn btn-primary">Delete</button>
     </form>
     <!-- form for Updating -->
-    <form action="/update" method="UPDATE">
+    <form action="/update" method="POST">
       <h5>UPDATE a person <strong>(UPDATE)</strong></h5>
 
       <div class="input">

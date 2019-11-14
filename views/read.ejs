@@ -5,7 +5,17 @@
   secondMenuItem: true
 }); %>
 
+<% if (statusMessage) { %>
+  <div id="status-message" class="container">
+    <div>
+      <strong>STATUS: </strong>
+      <%= statusMessage %>
+    </div>
+  </div>
+<% } %>
+
 <div class="container container--flex">
+
   <% data.persons.forEach(person => { %>
     
     <div class="person">
